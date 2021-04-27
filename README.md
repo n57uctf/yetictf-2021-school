@@ -1,4 +1,4 @@
-# yetictf-2021-scholl
+# yetictf-2021-school
 
 Where: Novosibirsk, NSTU
 
