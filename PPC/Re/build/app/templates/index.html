@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>REссворд</title>
+<style type="text/css">
+   TABLE {
+    width: auto;
+    border-collapse: collapse;
+   }
+   TD, TH {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:normal; 
+    padding: 1px;
+    border: 1px solid black;
+   }
+   TH {
+    background: #ffffff;
+   }
+   TD {
+       background: #ffffff;
+       text-align: center;
+   }
+   .null {
+    background: #ffffff;
+   }
+   a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+</style>
+</head>
+<body>
+<center>
+    <a href='/help'>Нужна помошь?</a>
+    <br> <br>
+    Count: {{count}}/200
+    <table cellspacing="0">
+        <tr>
+         <th class="null"></th><th>{{pc1}}</th><th>{{pc2}}</th>
+        </tr>
+        <tr>
+         <td>{{pr1}}</td><td class="null">0</td><td class="null">1</td>
+        </tr>
+        <tr>
+         <td>{{pr2}}</td><td class="null">2</td><td class="null">3</td>
+        </tr>
+       </table>
+       <br><br>
+    <form action="/" method="POST">
+        <input placeholder="Answer" type="text" name="answer"><br>
+        <input type="submit" value="submit">
+    </form>
+    {% if message %}
+        <h3> Message: {{message}} </h3>
+    {% endif %}
+    {% if button %}
+        {{button | safe}}
+    {% endif %}
+</center>
+</body>
+</html>

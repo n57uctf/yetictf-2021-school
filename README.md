@@ -1,1 +1,1 @@
-# yetictf-2021-school
+# Shool-s_CTF

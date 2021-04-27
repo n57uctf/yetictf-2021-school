@@ -1,0 +1,1 @@
+yetiCTF{bl4ck_b0x_cryp70_15_funny}

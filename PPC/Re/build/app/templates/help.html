@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>REссворд HELP</title>
+<style type="text/css">
+   TABLE {
+    width: auto;
+    border-collapse: collapse;
+   }
+   TD, TH {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:normal; 
+    padding: 1px;
+    border: 1px solid black;
+   }
+   TH {
+    background: #ffffff;
+   }
+   TD {
+       background: #ffffff;
+       text-align: center;
+   }
+   .null {
+    background: #ffffff;
+   }
+   a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+</style>
+</head>
+<body>
+<center>
+    <a href='/'>Вернуться к игре</a>
+    <br><h3>Добро пожаловать в REсвворды!</h3> <br>
+    <h4>Итак, ваша задача - правильно подобрать символ из диапазона [a-zA-Z0-9] для выданных выражений.<br>
+        Если вы все сделали правильно - вы получаете +1 балл и переходите к новому REсвворду.<br>
+        При достижении 200 баллов получаете заветный флаг.<br></h4>
+    <h3>Как это работает? Все просто, давайте посмотрим на пример: </h3>
+
+        <table cellspacing="0">
+            <tr>
+             <th class="null"></th><th>09|lC|D6</th><th>[^5GcA]+</th>
+            </tr>
+            <tr>
+             <td>lo</td><td class="null">0</td><td class="null">1</td>
+            </tr>
+            <tr>
+             <td>DN|Cf|xS</td><td class="null">2</td><td class="null">3</td>
+            </tr>
+           </table>
+           <br><br>
+    <h4>Итак, у нас есть 4 регулярных выражения и 4 позиции: 0, 1, 2, 3<br>
+        В первую клетку (0) мы должны подставить символ который будет совпадать с выражением lo и 09|lC|D6, то есть получаем символ l.<br>
+        Во вторую клетку (1) аналогично подставляем символ, соответствующий выражениям lo и [^5GcA]+, то есть o.<br>
+        Клетка 3: DN|Cf|xS и 09|lC|D6 = С<br>
+        Клетка 4: DN|Cf|xS и [^5GcA]+ = f<br>
+        <br>
+        Итоговое выражение, которое записываем в поле Answer (все символы через пробел):
+        <br>
+        l o C f
+        <br>
+        <br>
+        На стороне сервера происходит следующая проверка:<br>
+        <br>
+        if re.search(answer[0]+answer[2], "09|lC|D6	") and re.search(answer[0]+answer[1], "lo") and re.search(answer[1]+answer[3], "[^5GcA]+") and re.search(answer[2]+answer[3], "DN|Cf|xS	"):
+                return("ok")<br>
+        <br></h4>
+
+        <h3>При любой ошибке (не заполнены все значения или ошибка в ответе) - счетчик будет сброшен и придется начинать все с начала.</h3><br>
+        <h3>Удачи в прохожении!</h3>
+</center>
+</body>
+</html>

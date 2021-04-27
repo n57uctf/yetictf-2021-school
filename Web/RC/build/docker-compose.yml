@@ -1,0 +1,7 @@
+version: '2'
+services:
+  rc:
+    build: .
+    restart: always
+    ports:
+     - "8090:8090"

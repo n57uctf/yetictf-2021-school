@@ -1,0 +1,1 @@
+yetiCTF{do_you_like_lizard_spock_version?}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Тыква: новая система платежей</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<style>
+		#info {
+		  background: rgba(102, 102, 102, 0.5);
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  display: none;
+		}
+		#bonus {
+		  width: 500px;
+		  height: 200px;
+		  text-align: center;
+		  padding: 15px;
+		  border: 5px solid #ffffff;
+		  border-radius: 10px;
+		  color: #000000;
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  margin: auto;
+		  background: #ffffff;
+		}
+		#info:target {display: block;}
+		.close {
+		  display: inline-block;
+		  border: 1px solid #4287fe;
+		  color: #4287fe;
+		  padding: 0 10px;
+		  margin: -3px;
+		  text-decoration: none;
+		  background: #dcdcdc;
+		  font-size: 14pt;
+		  cursor:pointer;
+		}
+		.close:hover {background: #e6e6ff;}
+	  </style>
+</head>
+<body>
+    <script src="js/bootstrap.min.js"></script>
+    <div class="jumbotron">
+        <div class='text-center' class="text-center">
+            <h5 class="display-4">Платежная система тыква:<br>
+			cамый быстрый и безопасный сервис для транзакций.<br>
+			Всем новым пользователям - приятный бонус, 50 руб на внутренний счет!</h5>
+			<div class="container">
+				<div class="row">
+					<a class="col btn btn-primary btn-lg" href="/transaction" role="button">Перевод с счета на карту</a>
+					<a class="col btn btn-primary btn-lg" href="/exit" role="button">Выход из системы</a>
+        </div>
+    </div>
+	<br>
+	<h3> Баланс на счету: {{balance}}</h3>
+	<h3> Баланс карты: {{balance_card}}</h3>
+	</div>
+	</div>
+	<div id="info">
+		<div id="bonus">
+		  <h2>Только сегодня - при балансе карты выше 700 руб вы можете получить дополнительный бонус!</h2>
+		  <a href="#" class="close">Закрыть окно</a>
+		</div>
+	  </div>
+	  <center>
+		  <img src="static/pumpkin.png" alt="pumpkin">
+	{% if secret %}
+		<h3>Бонус: {{secret}} </h3>
+	{% endif %}
+	</center>
+</body>
+</html>

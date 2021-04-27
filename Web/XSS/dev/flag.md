@@ -1,0 +1,1 @@
+yetiCTF{very_bad_admin}

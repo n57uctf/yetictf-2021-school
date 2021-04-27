@@ -1,0 +1,1 @@
+yetiCTF{fastest_request_on_wild_fintech}

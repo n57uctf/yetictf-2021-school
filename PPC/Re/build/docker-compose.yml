@@ -1,0 +1,9 @@
+version: '3'
+services:
+  regular_human:
+    build: .
+    volumes:
+     - ./app:/app
+    ports:
+     - "1687:1687"
+

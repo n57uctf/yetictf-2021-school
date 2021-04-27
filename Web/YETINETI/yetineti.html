@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
+    <html lang="en">
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>yetineti</title>
+    </head>
+<body class="dark site">
+<main role="main">
+    <section>
+            <form class="form" onsubmit="tryPassword(); return false;">
+                Попробуй, получить флаг, тогда попадешь к нам
+                <input type="text" id="ctfflag">
+                <input type="submit" value="Check">
+            </form>
+                <style>
+                    html {
+                        min-width: 1000px;
+                        line-height: 1.5;
+                        -webkit-text-size-adjust: 100%
+                    }
+                    body {
+                        position: relative;
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        color: whitesmoke;
+                        background: url(Logo_005_3.jpg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                    .form {
+                        position: fixed; top: 300px; left: 500px;
+                        font-size: 20px;
+                        color: black;
+                    }
+                </style>
+                <script>
+                    function tryPassword() {
+                        var flag = document.getElementById('ctfflag').value;
+
+                        if (flag.length != 36) {
+                            alert("WRONG because of # 1");
+                            return;
+                        }
+
+                        if (flag.substr(0, 8) != "yetiCTF{") {
+                            alert("WRONG because of # 2");
+                            return;
+                        }
+
+                        if (flag.substr(15, 5) != "d_c0d") {
+                            alert("WRONG because of # 3");
+                            return;
+                        }
+
+                        if (flag.substr(22, 3) != "@nd") {
+                            alert("WRONG because of # 4");
+                            return;
+                        }
+
+                        if (flag.substr(11, 4) != "3_6@") {
+                            alert("WRONG because of # 5");
+                            return;
+                        }
+
+                        if (flag.substr(11, 2) != flag.substr(20, 2)) {
+                            alert("WRONG because of # 6");
+                            return;
+                        }
+
+                        if (flag.substr(8, 3) != "h@t") {
+                            alert("WRONG because of # 7");
+                            return;
+                        }
+
+                        if (flag.substr(32, 4) != String.fromCharCode(110,116,36,125)) {
+                            alert("WRONG because of # 8");
+                            return;
+                        }
+
+                        if (flag.substr(29, 3) != "iri") {
+                            alert("WRONG because of # 9");
+                            return;
+                        }
+
+                        if (flag.substr(25, 4) != String.fromCharCode(0x5F, 0x6C, 0x40, 0x36)) {
+                            alert("WRONG because of # 10");
+                            return;
+                        }
+
+                        alert("YES, exactly!");
+                    }
+                </script>
+    </section>
+</main>
+</body>
+</html>
